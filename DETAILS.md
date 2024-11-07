@@ -4,8 +4,8 @@ Submission Requirements: Round 2 - Project Building
     
     Description: A comprehensive plan outlining the project’s goals, timelines, milestones, and deliverables.
     Contents:
-    - Project objectives
-     - Detailed timeline with milestones
+      - Project objectives
+      - Detailed timeline with milestones
   	  - Description of deliverables
 
   Architecture Diagrams:
