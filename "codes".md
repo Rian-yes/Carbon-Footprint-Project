@@ -1,37 +1,34 @@
 CODES: 
 >BASED ON TRANSPORTATION
 # Define emission factors (kg CO₂ per mile)
-emission_factors = {
-    'car_gasoline': 0.411,
-    'car_electric': 0.1,
-    'bus': 0.056,
-    'train': 0.041,
-    'bicycle': 0.0,
-    'walking': 0.0
-}
-
+    emission_factors = {
+    'car_gasoline': 0.411,
+    'car_electric': 0.1,
+    'bus': 0.056,
+    'train': 0.041,
+    'bicycle': 0.0,
+    'walking': 0.0  
+    }
 # Function to calculate the transportation carbon footprint
-def calculate_transportation_footprint(data):
-    total_emissions = 0.0
+    def calculate_transportation_footprint(data):
+    total_emissions = 0.0
 
-    for mode, details in data.items():
-        distance = details['distance']  # miles per trip
-        frequency = details['frequency']  # trips per week
+    for mode, details in data.items():
+        distance = details['distance']  # miles per trip
+        frequency = details['frequency']  # trips per week
 
-        # Calculate emissions for this mode
-        emissions = distance * frequency * emission_factors.get(mode, 0)
-        total_emissions += emissions
-
-        print(f"{mode.capitalize()} emissions: {emissions:.2f} kg CO₂ per week")
-
-    return total_emissions
+# Calculate emissions for this mode
+        emissions = distance * frequency * emission_factors.get(mode, 0)
+        total_emissions += emissions
+        print(f"{mode.capitalize()} emissions: {emissions:.2f} kg CO₂ per week")
+     return total_emissions
 
 # Sample user data
-user_data = {
-    'car_gasoline': {'distance': 15, 'frequency': 5},  # 15 miles per trip, 5 trips per week
-    'bus': {'distance': 10, 'frequency': 3},           # 10 miles per trip, 3 trips per week
+    user_data = {
+    'car_gasoline': {'distance': 15, 'frequency': 5},  # 15 miles per trip, 5 trips per week
+'bus': {'distance': 10, 'frequency': 3},           # 10 miles per trip, 3 trips per week
     'bicycle': {'distance': 2, 'frequency': 7}         # 2 miles per trip, 7 trips per week
-}
+} 
 
 # Calculate the user's weekly transportation carbon footprint
 total_footprint = calculate_transportation_footprint(user_data)
